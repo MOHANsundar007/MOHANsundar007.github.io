@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+    
+        body {
+            scroll-behavior: smooth;
+            background: #f4f4f4;
+        }
+    
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #333;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+    
+       /* Main Navbar Styles */
+/* Main Navbar Styles */
+.navbar {
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 60px; /* Fixed height */
+    display: flex;
+    justify-content: center; /* Centers the links horizontally */
+    align-items: center; /* Vertically aligns content */
+    background-color: #333; /* Dark background */
+    padding: 0 20px;
+    border-bottom: 2px solid #00bcd4;
+    z-index: 1000; /* Ensures it stays on top */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Links */
+.navbar a {
+    color: white;
+    margin: 0 15px; /* Adds spacing between links */
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar a:hover {
+    color: #00bcd4;
+    background-color: rgba(0, 188, 212, 0.2); /* Light hover background */
+    border-radius: 5px;
+    transform: translateY(-3px); /* Slight hover animation */
+}
+
+/* Active Link Style */
+.navbar a.active {
+    color: #00bcd4;
+    font-weight: bold;
+    background-color: rgba(0, 188, 212, 0.3); /* Highlight active link */
+    border-radius: 5px;
+}
+
+/* Hover Underline Animation */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    width: 0;
+    height: 2px;
+    background-color: #00bcd4;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: calc(100% - 30px); /* Full width excluding padding */
+}
+
+/* Ensure Page Content Starts After Navbar */
+.main-content {
+    margin-top: 80px; /* Leaves space for the fixed navbar */
+    padding: 20px;
+}
+
+
+
+    
+        section {
+            padding: 80px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+         #projects {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+    
+        #home {
+            background-image: url('ai.gif');
+        }
+    
+        #projects {
+            background-image: url('all.webp');
+        }
+    
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        
+        #projects {
+        padding: 80px 20px;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+
+    .heading h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .project-cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .project-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        max-width: 350px;
+        width: 100%;
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+ 
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-content h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .card-content p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+
+    .card-actions {
+        display: flex;
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        background: #008c9e;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+        background: #00FFFF;
+    }
+
+    @media (max-width: 768px) {
+        .project-cards {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-card {
+            max-width: 100%;
+        }
+    }
+
+
+
+    #about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    #about h2 {
+        font-size: 48px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .about-card {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 30px;
+    }
+
+    .about-card .card {
+        background-color: #00bcd4;
+        padding: 40px;
+        width: 100%;
+        max-width: 900px;
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .about-card .card:hover {
+        transform: translateY(-10px);
+    }
+
+    .about-card .card p {
+        font-size: 22px;
+        line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+        .about-card {
+            flex-direction: column;
+        }
+        .about-card .card {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+ #skills p {
+    font-size: 18px;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    #about, #skills {
+        padding: 20px 15px;
+    }
+
+    #about p, #skills p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+    
+.skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    .skill-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-card h2 {
+      font-size: 20px;
+      color: #4caf50;
+      margin-bottom: 15px;
+    }
+
+    .skill-card p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .skill-card .icon {
+      font-size: 50px;
+      margin-bottom: 10px;
+      color: #2196f3;
+    }
+    
+    #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+#contact h2 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-card {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Allows cards to wrap in smaller screen sizes */
+}
+
+.contact-card .card {
+    background-color: #00bcd4;
+    padding: 40px;
+    width: 350px;
+    height: 350px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-card .card:hover {
+    transform: translateY(-10px);
+}
+
+.contact-card .card img {
+    width: 100px; /* Reduced the image size for better proportions */
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.contact-card .card a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    margin-top: 10px; /* Add some spacing between the image and link */
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-card {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-card .card {
+        width: 100%;
+        margin-bottom: 20px;
+        height: auto; /* Allow height to adjust automatically for better fit */
+    }
+}
+
+        
+/* Home Section */
+#home {
+    background-image: url('r.gif');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 80px 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+/* Flexbox for aligning content */
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Adjusting home-text position */
+.home-text {
+    margin-left: 30px;  /* Create space between the image and the text */
+}
+
+/* Adjusting image size and layout */
+.home-image {
+    position: relative; /* Allows positioning of child elements */
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+}
+
+.home-image .overlay-image {
+    position: absolute; /* Positioned relative to .home-image */
+    width: 250px; /* Smaller size */
+    height: 250px;
+    border-radius: 50%; /* Keeps it circular */
+    border: 3px solid white;
+    object-fit: cover;
+
+    /* Centering the overlay */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-text {
+        margin-left: 0; /* Remove margin on small screens */
+        margin-top: 20px; /* Add space between text and image */
+    }
+
+    .home-image {
+        margin-top: 15px;
+    }
+}
+
+/* Animation */
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+    50% {
+        text-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff;
+    }
+}
+
+h1 {
+    animation: pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+    #about, #skills {
+        padding: 20px 15px;
+    }
+
+    #about p, #skills p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+        #certifications {
+        padding: 50px 20px;
+        background-color: #f0f0f0;
+        text-align: center;
+    }
+
+    .heading h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    /* Certifications Slider */
+    .certifications-container {
+        overflow: hidden; /* Hide overflow */
+        position: relative;
+        width: 100%;
+    }
+
+    .certifications-slider {
+        display: flex;
+        transition: transform 0.2s ease; /* Smooth movement on hover */
+    }
+
+    /* Individual Certification Card */
+    .certification {
+        flex: 0 0 auto; /* Prevent shrinking or growing */
+        width: 300px; /* Fixed size for each certification */
+        margin: 0 10px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    .certification:hover {
+        transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+    .certification img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .certification p {
+        font-size: 16px;
+        color: #555;
+    }
+    footer {
+    background: linear-gradient(to right, #34495e, #2c3e50); /* Gradient background */
+    color: white;
+    text-align: center;
+    padding: 40px 20px; /* Increased padding for better spacing */
+    border-top: 3px solid #00bcd4; /* Subtle top border for separation */
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+}
+
+/* Adding hover effect for links (if any) */
+footer a {
+    color: #00bcd4; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff; /* On hover, link text turns white */
+    text-decoration: underline; /* Underline on hover */
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px; /* Adjusted font size for readability */
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 20px 10px; /* Reduced padding on smaller screens */
+    }
+}
+
+#hackathon-achievements {
+    background-image: url('acc.png'); /* Your image for parallax */
+    background-attachment: fixed; /* Enables parallax scrolling */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the background image covers the entire section */
+    padding: 30px; /* Increased padding for more spacing */
+    text-align: center;
+    color: #000; /* Adjust text color for visibility */
+    position: relative;
+
+}
+
+.hackathon-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hackathon-slider {
+    position: relative;
+    width: 600px; /* Increased width */
+    height: 800px; /* Increased height */
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 10px;
+   
+}
+
+.achievement {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.achievement img {
+    width: 80%; /* Keeps the image responsive */
+    max-height: 70%; /* Ensures proper alignment */
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.achievement p {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#hackathon-achievements">Achievements</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+    
+   
+    
+
+    <section id="home">
+        <div class="home-content">
+            <div class="home-image">
+                <img src="ai.gif" alt="Mohan's Photo" class="background-image">
+                <img src="moh.png" alt="Mohan's Photo" class="overlay-image">
+            </div>
+            <div class="home-text">
+                <h1>Hello, I'm Mohanasundaram</h1>
+                <p>I love working on AI and robotics and enjoy building cool things with technology.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-card">
+            <div class="card">
+                <p>
+                    I would like to introduce myself. I am passionate about AI and Machine Learning and always seek innovative ways
+                    to contribute to society. I have a strong enthusiasm for research and continuous learning which motivates me to
+                    explore new opportunities. I am a collaborative team player and work effectively with others. With a sincere and
+                    detail oriented approach I ensure that my work is completed accurately and on time                </p>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+     
+  <div class="skills-container">
+    <!-- Core Skills -->
+    <div class="skill-card">
+      <div class="icon">💻</div>
+      <h2>Core Skills</h2>
+      <p>| Machine Learning | Deep Learning | NLP | Computer Vision (Basics) | Generative AI (Basics) | OOPS |</p>
+    </div>
+
+    <!-- Languages -->
+    <div class="skill-card">
+      <div class="icon">🌐</div>
+      <h2>programing Languages</h2>
+      <p>| Python | Java | c++ | C | R | JavaScript | HTML | Kotlin | XML | css |</p>
+    </div>
+
+    <!-- Web Frameworks -->
+    <div class="skill-card">
+      <div class="icon">🌟</div>
+      <h2>Web Frameworks</h2>
+      <p>| React | Streamlit | Flask | Django | FastAPI |</p>
+    </div>
+
+    <!-- Databases -->
+    <div class="skill-card">
+      <div class="icon">🗄️</div>
+      <h2>Databases</h2>
+      <p>| MySQL | Firebase | MongoDB |</p>
+    </div>
+  </div>    
+    </section>
+
+    <section id="projects">
+        
+        <div class="project-cards">
+            <!-- Card 1 -->
+            <div class="project-card">
+                <img src="ll.jpeg" alt="Yoga Coach Assistant">
+                <div class="card-content">
+                    <h3>Yoga Coach Assistant</h3>
+                    <p>An AI-based virtual coach to improve yoga practice using pose detection.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/MOHANsundar007/Hand-Gesture-Control-with-Euclidean-Distance" target="_blank" class="btn">View Details</a>
+
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="project-card">
+                <img src="ll.jpeg" alt="Language Learning App">
+                <div class="card-content">
+                    <h3>Language Learning App</h3>
+                    <p>A comprehensive app for learning languages with translation and quizzes.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/MOHANsundar007/Hand-Gesture-Control-with-Euclidean-Distance" target="_blank" class="btn">View Details</a>
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Card 3 -->
+            <div class="project-card">
+                <img src="ll.jpeg" alt="Virtual Lawyer Bot">
+                <div class="card-content">
+                    <h3>Virtual Lawyer Bot</h3>
+                    <p>A law bot that answers legal questions using AI and RAG architecture.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/MOHANsundar007/Hand-Gesture-Control-with-Euclidean-Distance" target="_blank" class="btn">View Details</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="certifications">
+       
+        <div class="certifications-container">
+            <div class="certifications-slider">
+                <!-- Certification 1 -->
+                <div class="certification">
+                    <img src="certificates/ml.jpg" alt="Certification 1">
+                    <p>Deep Learning Specialization - Coursera</p>
+                </div>
+                <!-- Certification 2 -->
+                <div class="certification">
+                    <img src="certificates/c2.jpg" alt="Certification 2">
+                    <p>AI and Machine Learning Fundamentals - edX</p>
+                </div>
+                <!-- Certification 3 -->
+                <div class="certification">
+                    <img src="certificates/c3.jpg" alt="Certification 3">
+                    <p>Full-Stack Web Development - Udemy</p>
+                </div>
+                <!-- Certification 4 -->
+                <div class="certification">
+                    <img src="certificates/c4.jpg" alt="Certification 4">
+                    <p>Python for Data Science - DataCamp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="hackathon-achievements">
+        <div class="hackathon-container">
+  
+            <div class="hackathon-slider">
+                <!-- Achievement 1 -->
+                <div class="achievement">
+                    <img src="certificates/h1.jpg "alt="Hackathon 1">
+                    <p>Winner - AI Hackathon 2023</p>
+                    <p>Organized by XYZ Organization</p>
+                </div>
+                <!-- Achievement 2 -->
+                <div class="achievement">
+                    <img src="certificates/h2.jpg" alt="Hackathon 2">
+                    <p>First Runner-Up - Blockchain Buildathon</p>
+                    <p>Hosted by ABC Tech Community</p>
+                </div>
+                <!-- Achievement 3 -->
+                <div class="achievement">
+                    <img src="certificates/h3.jpg" alt="Hackathon 3">
+                    <p>Top 5 Finalist - Smart City Hack 2022</p>
+                    <p>Sponsored by DEF Innovations</p>
+                </div>
+                <!-- Achievement 4 -->
+                <div class="achievement">
+                    <img src="certificates/h4.jpg" alt="Hackathon 4">
+                    <p>Best Design - HealthTech Hackathon</p>
+                    <p>Held at GHI University</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-card">
+            <div class="card">
+                <img src="linked.png" alt="LinkedIn">
+                <a href="https://www.linkedin.com/in/mohanasundaram-g-ai-ml-387b77259" target="_blank" class="btn">
+                    LinkedIn
+                </a>
+               
+            </div>
+            <div class="card">
+                <img src="git.png" alt="Github">
+                <a href="https://github.com/MOHANsundar007" target="_blank" class="btn">
+                    Github
+                </a>
+             
+            </div>
+            <div class="card">
+                <img src="mail.png" alt="gmail">
+                <h3>mohanasundaram.g2022ai-ml@sece.ac.in</h3>
+               
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <footer>
+        <p>&copy; 2025 Mohan. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelectorAll('.navbar a').forEach(a => a.classList.remove('active'));
+                
+                this.classList.add('active');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            let currentSection = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.navbar a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        const slider = document.querySelector('.certifications-slider');
+    const container = document.querySelector('.certifications-container');
+
+    // Add a mousemove event to the container
+    container.addEventListener('mousemove', (event) => {
+        const containerWidth = container.offsetWidth;
+        const mouseX = event.clientX;
+
+        // Calculate the percentage of mouse position across the container
+        const percentage = (mouseX / containerWidth) * 100;
+
+        // Map percentage to slider movement (move between -100% and 0%)
+        const moveX = -((percentage * (slider.scrollWidth - containerWidth)) / 100);
+
+        // Apply transform to slider
+        slider.style.transform = `translateX(${moveX}px)`;
+    });
+
+
+ 
+    document.addEventListener("DOMContentLoaded", () => {
+        const achievements = document.querySelectorAll(".achievement");
+        let currentIndex = 0;
+
+        function showNextAchievement() {
+            // Hide current achievement
+            achievements[currentIndex].classList.remove("active");
+
+            // Move to the next achievement
+            currentIndex = (currentIndex + 1) % achievements.length;
+
+            // Show the next achievement
+            achievements[currentIndex].classList.add("active");
+        }
+
+        // Show the first achievement initially
+        achievements[currentIndex].classList.add("active");
+
+        // Cycle through achievements every 3 seconds
+        setInterval(showNextAchievement, 3000);
+    });
+
+
+
+
+
+    </script>
+</body>
+</html>
