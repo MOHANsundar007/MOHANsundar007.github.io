@@ -37,29 +37,29 @@
         }
     
       
-
+/* Navbar Styling */
 .navbar {
     position: fixed; 
     top: 0;
     left: 0;
-    width: 100%; 
-    height: 60px; 
+    width: 100%; /* Full width */
+    height: 60px; /* Fixed height */
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    background-color: #1B263B; 
+    justify-content: center; /* Centers the links horizontally */
+    align-items: center; /* Vertically aligns content */
+    background-color: #1B263B; /* Deep Navy */
     padding: 0 20px;
     border-top: 2px solid #F1C40F; 
 
-    border-bottom: 2px solid #F1C40F; 
-    z-index: 1000; 
+    border-bottom: 2px solid #F1C40F; /* Soft Gold */
+    z-index: 1000; /* Ensures it stays on top */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
+/* Navbar Links */
 .navbar a {
-    color: #0ABAB5; 
-    margin: 0 15px; 
+    color: #0ABAB5; /* Cyan Glow */
+    margin: 0 15px; /* Adds spacing between links */
     text-decoration: none;
     font-size: 18px;
     position: relative;
@@ -68,21 +68,21 @@
 }
 
 .navbar a:hover {
-    color: #FFFFFF; 
-    background-color: rgba(10, 186, 181, 0.2); 
+    color: #FFFFFF; /* White for hover text */
+    background-color: rgba(10, 186, 181, 0.2); /* Light Cyan Glow background */
     border-radius: 5px;
-    transform: translateY(-3px); 
+    transform: translateY(-3px); /* Slight hover animation */
 }
 
-
+/* Active Link Style */
 .navbar a.active {
-    color: #F1C40F; 
+    color: #F1C40F; /* Soft Gold */
     font-weight: bold;
-    background-color: rgba(241, 196, 15, 0.3);
+    background-color: rgba(241, 196, 15, 0.3); /* Highlight active link with Soft Gold */
     border-radius: 5px;
 }
 
-
+/* Hover Underline Animation */
 .navbar a::after {
     content: '';
     position: absolute;
@@ -90,26 +90,27 @@
     left: 15px;
     width: 0;
     height: 2px;
-    background-color: #F1C40F;
+    background-color: #F1C40F; /* Soft Gold */
     transition: all 0.3s ease;
 }
 
 .navbar a:hover::after {
-    width: calc(100% - 30px); 
-
+    width: calc(100% - 30px); /* Full width excluding padding */
 }
+
+/* Body Text */
 body {
     font-family: Arial, sans-serif;
-    color: #FFFFFF; 
-    background-color: #1B263B; 
+    color: #FFFFFF; /* White */
+    background-color: #1B263B; /* Deep Navy */
     margin: 0;
     padding: 0;
 }
 
-
+/* Section Cards */
 .card {
-    background-color: #D3D3D3; 
-    border: 1px solid #F1C40F; 
+    background-color: #D3D3D3; /* Light Gray */
+    border: 1px solid #F1C40F; /* Soft Gold */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -117,17 +118,17 @@ body {
     max-width: 600px;
 }
 
-
+/* Divider Lines */
 .divider {
     height: 2px;
-    background-color: #F1C40F; 
+    background-color: #F1C40F; /* Soft Gold */
     margin: 20px 0;
 }
 
 
-
+/* Ensure Page Content Starts After Navbar */
 .main-content {
-    margin-top: 80px; 
+    margin-top: 80px; /* Leaves space for the fixed navbar */
     padding: 20px;
 }
 
@@ -172,7 +173,7 @@ body {
 .heading h2 {
     font-size: 36px;
     margin-bottom: 30px;
-    color: #F1C40F; 
+    color: #F1C40F; /* Soft Gold */
 }
 
 .project-cards {
@@ -211,12 +212,12 @@ body {
 .card-content h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: #333; 
+    color: #333; /* Dark Gray for headings */
 }
 
 .card-content p {
     font-size: 16px;
-    color: #555; 
+    color: #555; /* Medium Gray for text */
     line-height: 1.5;
     margin-bottom: 15px;
 }
@@ -228,7 +229,7 @@ body {
 
 .btn {
     padding: 10px 15px;
-    background: #008c9e; 
+    background: #008c9e; /* Cyan Glow */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -238,7 +239,7 @@ body {
 }
 
 .btn:hover {
-    background: #00FFFF; 
+    background: #00FFFF; /* Cyan Glow on hover */
 }
 
 @media (max-width: 768px) {
@@ -258,12 +259,13 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 50px 20px;
-    background-color: #1B263B; }
+    background-color: #1B263B; /* Deep Navy for the background */
+}
 #about h2 {
     font-size: 48px;
     font-weight: bold;
-    color: #F1C40F;
-    margin-top: 20px;
+    color: #F1C40F; /* Soft Gold for headings */
+    margin-top: 20px; /* Move heading down */
     margin-bottom: 40px;
     text-align: center;
 }
@@ -274,17 +276,17 @@ body {
     justify-content: center;
     gap: 40px;
     margin-top: 30px;
-    background-color: #2E3B4E; 
+    background-color: #2E3B4E; /* Slightly darker gray-blue for better contrast */
     padding: 40px;
     width: 100%;
     max-width: 900px;
-    color: #0a0a0a; 
+    color: #0a0a0a; /* Light Gray for body text to reduce strain on eyes */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
     cursor: pointer;
     text-align: justify;
     border: 4px solid #00bcd4;
@@ -293,33 +295,33 @@ body {
 
 .about-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(10, 186, 181, 0.3); 
+    box-shadow: 0 8px 25px rgba(10, 186, 181, 0.3); /* Cyan Glow effect on hover */
 }
 
 .about-card p {
     font-size: 22px;
     line-height: 1.8;
-    color: #060505; 
+    color: #060505; /* Ensuring body text remains light gray for readability */
 }
 
-
+/* Media queries for responsive design */
 @media (max-width: 768px) {
     .about-card {
         flex-direction: column;
     }
     .about-card p {
-        font-size: 20px;
+        font-size: 20px; /* Slightly smaller font for smaller screens */
     }
 }
 
-
+/* Style for links/icons and hover effects */
 a, .icon {
-    color: #0ABAB5; 
+    color: #0ABAB5; /* Cyan Glow for links and icons */
     text-decoration: none;
 }
 
 a:hover, .icon:hover {
-    color: #F1C40F; 
+    color: #F1C40F; /* Soft Gold on hover */
 }
 
 
@@ -424,12 +426,13 @@ a:hover, .icon:hover {
     flex-direction: column;
     align-items: center;
     padding: 80px 20px;
-    background: #1B263B; }
+    background: #1B263B; /* Deep Navy for background */
+}
 
 #contact h2 {
     font-size: 50px;
     font-weight: 800;
-    color: #F1C40F; 
+    color: #F1C40F; /* Soft Gold for headings */
     margin-bottom: 40px;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -444,11 +447,11 @@ a:hover, .icon:hover {
 }
 
 .contact-card .card {
-    background-color: #fff; 
+    background-color: #fff; /* Light Gray for card background */
     padding: 40px;
     width: 350px;
     height: 400px;
-    color: #0d0c0c; 
+    color: #0d0c0c; /* White for text */
     text-align: center;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -464,7 +467,7 @@ a:hover, .icon:hover {
 
 .contact-card .card:hover {
     transform: translateY(-15px);
-    box-shadow: 0 15px 40px rgba(10, 186, 181, 0.3); 
+    box-shadow: 0 15px 40px rgba(10, 186, 181, 0.3); /* Cyan Glow on hover */
 }
 
 .contact-card .card img {
@@ -472,7 +475,7 @@ a:hover, .icon:hover {
     height: 120px;
     margin-bottom: 20px;
     border-radius: 50%;
-    border: 4px solid #00bcd4; 
+    border: 4px solid #00bcd4; /* Cyan border */
     transition: all 0.3s ease;
 }
 
@@ -481,7 +484,7 @@ a:hover, .icon:hover {
 }
 
 .contact-card .card a {
-    color: #ffffff; 
+    color: #ffffff; /* Cyan Glow for links */
     text-decoration: none;
     font-size: 24px;
     font-weight: 700;
@@ -491,7 +494,7 @@ a:hover, .icon:hover {
 
 
 
-
+/* Responsive Styles */
 @media (max-width: 768px) {
     #contact {
         padding: 60px 10px;
@@ -510,7 +513,7 @@ a:hover, .icon:hover {
 
 
         
-
+/* Home Section */
 #home {
     background: linear-gradient(to Top, #1B263B, #3E4A59);
     background-image: url('wh.gif');
@@ -528,7 +531,7 @@ a:hover, .icon:hover {
     text-align: left;
 }
 
-
+/* Flexbox for aligning content */
 .home-content {
     display: flex;
     align-items: center;
@@ -537,15 +540,15 @@ a:hover, .icon:hover {
     border-radius: 10px;
 }
 
-
+/* Adjusting home-text position */
 .home-text {
-    margin-left: 30px; 
+    margin-left: 30px;  /* Create space between the image and the text */
     font-size: 25px;
 }
 
-
+/* Adjusting image size and layout */
 .home-image {
-    position: relative; 
+    position: relative; /* Allows positioning of child elements */
     width: 500px;
     height: 500px;
     border-radius: 50%;
@@ -554,14 +557,14 @@ a:hover, .icon:hover {
 }
 
 .home-image .overlay-image {
-    position: absolute; 
-    width: 250px; 
+    position: absolute; /* Positioned relative to .home-image */
+    width: 250px; /* Smaller size */
     height: 250px;
-    border-radius: 50%; 
+    border-radius: 50%; /* Keeps it circular */
     border: 3px solid white;
     object-fit: cover;
 
-
+    /* Centering the overlay */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -573,7 +576,7 @@ a:hover, .icon:hover {
     object-fit: cover;
 }
 
-
+/* Responsive layout */
 @media (max-width: 768px) {
     .home-content {
         flex-direction: column;
@@ -582,8 +585,8 @@ a:hover, .icon:hover {
     }
 
     .home-text {
-        margin-left: 0; 
-        margin-top: 20px; 
+        margin-left: 0; /* Remove margin on small screens */
+        margin-top: 20px; /* Add space between text and image */
     }
 
     .home-image {
@@ -591,7 +594,7 @@ a:hover, .icon:hover {
     }
 }
 
-
+/* Animation */
 @keyframes pulse {
     0%, 100% {
         text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
@@ -617,8 +620,8 @@ h1 {
 }#certifications {
     padding: 50px 20px;
     background-image: url('sss.gif');
-    
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    /* Deep Navy background for a professional look */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
     border-radius: 10px;
     margin: 50px auto;
     max-width: 1300px;
@@ -637,17 +640,17 @@ h1 {
 .heading h2 {
     font-size: 40px;
     margin-bottom: 10px;
-    color: #F1C40F; 
+    color: #F1C40F; /* Soft Gold for attention-grabbing titles */
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Adds a subtle shadow for better visibility */
 }
 
 .heading h3 {
     font-size: 22px;
-    color: #0ABAB5; 
+    color: #0ABAB5; /* Cyan Glow for a modern and tech-savvy touch */
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
     margin-bottom: 30px;
@@ -675,10 +678,12 @@ h1 {
     color: #060505;
 }
 
+/* Individual Certification Card */
 .certification {
     flex: 0 0 auto;
     width: 320px;
-    background: #F9FAFB;
+    background: #F9FAFB; /* Light Gray for contrast against the navy background */
+    border-radius: 12px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     text-align: center;
     padding: 25px;
@@ -693,8 +698,8 @@ h1 {
 .certification:hover {
     transform: scale(1.05);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
-    background: #F1C40F; 
-    color: #1B263B;
+    background: #F1C40F; /* Soft Gold hover effect for premium feel */
+    color: #1B263B; /* Text color change for readability on hover */
 }
 
 .certification img {
@@ -711,7 +716,7 @@ h1 {
     transform: scale(1.1);
 }
 
-
+/* Zoom effect on click */
 .certification.zoomed {
     transform: scale(1.4);
     z-index: 100;
@@ -721,14 +726,14 @@ h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
+/* Make sure the container adjusts when zoomed */
 .certifications-container.zoomed {
     transform: scale(1.1);
     overflow-x: auto;
     width: 100%;
 }
 
-
+/* Responsive Styles */
 @media (max-width: 768px) {
     #certifications {
         padding: 30px 15px;
@@ -761,11 +766,12 @@ h1 {
     text-align: center;
     padding: 40px 20px; 
     border-top: 3px solid  #F1C40F; 
-    border-bottom: 3px solid  #F1C40F;
-    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1); 
-    font-family: 'Arial', sans-serif; 
+    border-bottom: 3px solid  #F1C40F;/* Subtle top border for separation */
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+}
 
-
+/* Adding hover effect for links (if any) */
 footer a {
     color: #0ABAB5; 
     text-decoration: none;
@@ -773,19 +779,19 @@ footer a {
 }
 
 footer a:hover {
-    color: #fff; 
-    text-decoration: underline; 
+    color: #fff; /* On hover, link text turns white */
+    text-decoration: underline; /* Underline on hover */
 }
 
 footer p {
     margin: 0;
-    font-size: 16px; 
+    font-size: 16px; /* Adjusted font size for readability */
     line-height: 1.6;
 }
 
 @media (max-width: 768px) {
     footer {
-        padding: 20px 10px; 
+        padding: 20px 10px; /* Reduced padding on smaller screens */
     }
 }
 #hackathon-achievements {
@@ -816,7 +822,7 @@ footer p {
     justify-content: start;
     overflow: hidden;
     white-space: nowrap;
-    animation: scroll-left 100s linear infinite; 
+    animation: scroll-left 100s linear infinite; /* Longer duration for smoother, continuous scroll */
 }
 
 .achievement {
@@ -871,7 +877,6 @@ footer p {
         font-size: 16px;
     }
 }
-    }
 
 
 
@@ -921,56 +926,56 @@ footer p {
     </section>
     <section id="skills">
         <div class="skills-container">
-          
+          <!-- Core Skills -->
           <div class="skill-card">
             <div class="icon">💻</div>
             <h2>Core Skills</h2>
             <p>| Machine Learning | Deep Learning | NLP | Computer Vision (Basics) | Generative AI (Basics) | OOPS |</p>
           </div>
       
-          
+          <!-- Programming Languages -->
           <div class="skill-card">
             <div class="icon">🌐</div>
             <h2>Programming Languages</h2>
             <p>| Python | Java | C++ | C | R | JavaScript | HTML | Kotlin | XML | CSS |</p>
           </div>
       
-          
+          <!-- Web Frameworks -->
           <div class="skill-card">
             <div class="icon">🌟</div>
             <h2>Web Frameworks</h2>
             <p>| React | Streamlit | Flask | Django | FastAPI |</p>
           </div>
       
-          
+          <!-- Databases -->
           <div class="skill-card">
             <div class="icon">🗄️</div>
             <h2>Databases</h2>
             <p>| MySQL | Firebase | MongoDB |</p>
           </div>
       
-          
+          <!-- Development IDEs -->
           <div class="skill-card">
             <div class="icon">🛠️</div>
             <h2>Development IDEs</h2>
             <p>| Android Studio | Arduino IDE | Visual Studio | PyCharm | Spyder |</p>
           </div>
       
-          
+          <!-- Version Control -->
           <div class="skill-card">
             <div class="icon">🔄</div>
             <h2>Version Control</h2>
             <p>| Git | GitHub |</p>
           </div>
       
-          
+          <!-- Design Tools -->
           <div class="skill-card">
             <div class="icon">🎨</div>
             <h2>Design Tools</h2>
             <p>| Canva |</p>
           </div>
       
-          
+          <!-- Language Skills -->
           <div class="skill-card">
             <div class="icon">🗣️</div>
             <h2>Language Skills</h2>
@@ -983,7 +988,7 @@ footer p {
     <section id="projects">
         
         <div class="project-cards">
-            
+            <!-- Card 1 -->
             <div class="project-card">
                 <img src="p2.png" alt="Yoga Coach Assistant">
                 <div class="card-content">
@@ -997,7 +1002,7 @@ footer p {
                 </div>
             </div>
             
-            
+            <!-- Card 2 -->
             <div class="project-card">
                 <img src="p3.png" alt="Language Learning App">
                 <div class="card-content">
@@ -1010,7 +1015,7 @@ footer p {
                 </div>
             </div>
     
-           
+            <!-- Card 3 -->
             <div class="project-card">
                 <img src="p1.png" alt="Virtual Lawyer Bot">
                 <div class="card-content">
@@ -1029,17 +1034,17 @@ footer p {
 
     <section id="certifications">
         <div class="heading">
-            <h2>My Certifications</h2> 
+            <h2>My Certifications</h2> <!-- Main heading -->
             
         </div>
         <div class="certifications-container">
             <div class="certifications-slider">
-               
+                <!-- Certification 1 -->
                 <div class="certification">
                     <img src="certificates/ml.jpg" alt="Certification 1">
                     <p>Machine Learning(supervised Machine Learning)</p>
                 </div>
-
+                <!-- Certification 2 -->
                 <div class="certification">
                     <img src="certificates/nlp.jpg" alt="Certification 2">
                     <p>NLP with Classification and Vector Spaces</p>
@@ -1053,12 +1058,12 @@ footer p {
                     <img src="certificates/sql.jpg" alt="Certification 4">
                     <p> SQL Basics </p>
                 </div>
-               
+                <!-- Certification 3 -->
                 <div class="certification"> 
                     <img src="certificates/c3.jpg" alt="Certification 3">
                     <p>Docker best practices</p>
                 </div>
-           
+                <!-- Certification 4 -->
                 <div class="certification">
                     <img src="certificates/c4.jpg" alt="Certification 4">
                     <p>Virtual cloud computing</p>
@@ -1192,18 +1197,18 @@ footer p {
         const slider = document.querySelector('.certifications-slider');
     const container = document.querySelector('.certifications-container');
 
-    
+    // Add a mousemove event to the container
     container.addEventListener('mousemove', (event) => {
         const containerWidth = container.offsetWidth;
         const mouseX = event.clientX;
 
-  
+        // Calculate the percentage of mouse position across the container
         const percentage = (mouseX / containerWidth) * 100;
 
-    
+        // Map percentage to slider movement (move between -100% and 0%)
         const moveX = -((percentage * (slider.scrollWidth - containerWidth)) / 100);
 
-        
+        // Apply transform to slider
         slider.style.transform = `translateX(${moveX}px)`;
     });
 
@@ -1214,17 +1219,20 @@ footer p {
         let currentIndex = 0;
 
         function showNextAchievement() {
-            
+            // Hide current achievement
             achievements[currentIndex].classList.remove("active");
 
-           
+            // Move to the next achievement
             currentIndex = (currentIndex + 1) % achievements.length;
 
+            // Show the next achievement
             achievements[currentIndex].classList.add("active");
         }
 
+        // Show the first achievement initially
         achievements[currentIndex].classList.add("active");
 
+        // Cycle through achievements every 3 seconds
         setInterval(showNextAchievement, 3000);
     });
 
